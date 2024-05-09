@@ -49,10 +49,11 @@ class XmlBuilder {
         $domElement = $dom->importNode($domElement, true);
         $domElement = $dom->appendChild($domElement);
 
-        $suitorId = $suitor->getId();
+        /*$suitorId = $suitor->getId();
         $filename = "../../save/suitor-{$suitorId}.xml";
-
         $dom->save($filename);
+        */
+
         return $dom->saveXML();
     }
 }
