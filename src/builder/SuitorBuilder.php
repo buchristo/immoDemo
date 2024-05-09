@@ -1,13 +1,13 @@
 <?php
 
-namespace ImmodDemo\Builder;
+namespace ImmoDemo\Builder;
 
 use ImmoDemo\Model\Suitor;
 use ImmoDemo\Enums\PreferredContact;
 use ImmoDemo\Enums\Request;
 
 class SuitorBuilder {
-    public function build(array $postData): Suitor {
+    public static function build(array $postData): Suitor {
         $suitor = new Suitor(
             $postData['title'],
             $postData['firstName'],
