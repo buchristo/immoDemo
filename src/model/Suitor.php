@@ -70,7 +70,7 @@ class Suitor {
         return $this->id;
     }
 
-    public function getAnrede()
+    public function getTitle()
     {
         return $this->title;
     }
