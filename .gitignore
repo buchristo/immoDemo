@@ -1,1 +1,7 @@
 save/
+/vendor/
+.env
+.log
+*.bak
+*.swp
+*.cache
