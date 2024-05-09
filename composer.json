@@ -1,0 +1,10 @@
+{
+    "name": "buchristo/immodemo",
+    "description": "Immo Demo Project",
+    "autoload": {
+        "psr-4": {
+            "ImmoDemo\\": "src/"
+        }
+    },
+    "require": {}
+}

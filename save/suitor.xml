@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<AntragformularXML>
+  <objekt>
+    <object_id>123</object_id>
+    <bezeichnung>Beispielobjekt</bezeichnung>
+  </objekt>
+  <Interessent/>
+  <id>663ca931a4ccb</id>
+  <anrede>Frau</anrede>
+  <vorname>Martina</vorname>
+  <nachname>Bucher</nachname>
+  <firma/>
+  <strasse>Kremserstrasse</strasse>
+  <postfach>18</postfach>
+  <plz>3730</plz>
+  <ort>Eggenburg</ort>
+  <tel>06643675930</tel>
+  <fax/>
+  <mobil>12345</mobil>
+  <email>test@test.at</email>
+  <Bevorzugt>
+    <Preferred Contact value="EMAIL"/>
+    <Preferred Contact value="MOBIL"/>
+  </Bevorzugt>
+  <Wunsch>
+    <Suitor Request value="ANRUF"/>
+  </Wunsch>
+</AntragformularXML>
