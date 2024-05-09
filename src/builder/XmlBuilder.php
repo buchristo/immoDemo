@@ -11,7 +11,7 @@ class XmlBuilder {
 
         $xml = new SimpleXMLElement('<AntragformularXML></AntragformularXML>');
 
-        $objekt = $xml->addChild('objekt');
+        $objekt = $xml->addChild('Objekt');
         $objekt->addChild('object_id', '123');
         $objekt->addChild('bezeichnung', 'Beispielobjekt');
 
