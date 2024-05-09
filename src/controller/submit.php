@@ -1,44 +1,18 @@
 <?php
 
-require_once '../model/Suitor.php';
 require_once __DIR__ . '../../../vendor/autoload.php';
 
-use ImmoDemo\Enums\PreferredContact;
-use ImmoDemo\Enums\Request;
-use ImmoDemo\Model\Suitor;
+use ImmoDemo\Builder\SuitorBuilder;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $postData = json_decode(file_get_contents("php://input"), true);
 
-// eigene klasse welche den suitor buildet
 
     if ($postData) {
-        $suitor = new Suitor(
-            $postData['title'],
-            $postData['firstName'],
-            $postData['lastName'],
-            $postData['company'],
-            $postData['street'],
-            $postData['streetNumber'],
-            $postData['zipCode'],
-            $postData['city'],
-            $postData['phoneNumber'],
-            $postData['faxNumber'],
-            $postData['mobileNumber'],
-            $postData['email']
-        );
 
-        $postData['contactViaEmail'] && $suitor->addContactPreference(PreferredContact::EMAIL);
-        $postData['contactViaPhone'] && $suitor->addContactPreference(PreferredContact::TELEPHONE);
-        $postData['contactViaMobile'] && $suitor->addContactPreference(PreferredContact::MOBILE);
-        $postData['contactViaFax'] && $suitor->addContactPreference(PreferredContact::FAX);
-        $postData['contactViaLetter'] && $suitor->addContactPreference(PreferredContact::LETTER);
+        $suitor = SuitorBuilder::build($postData);
 
-        $postData['requestViewing'] && $suitor->addSuitorRequest(Request::VIEWING);
-        $postData['requestCallback'] && $suitor->addSuitorRequest(Request::CALLBACK);
-        $postData['requestDetails'] && $suitor->addSuitorRequest(Request::DETAIL);
-
-//----------------- generate XML --> eigene klasse
+//----------------- generate XML --> soll ausgelagert werden in eine eigene klasse
 
         $xml = new SimpleXMLElement('<AntragformularXML></AntragformularXML>');
 
