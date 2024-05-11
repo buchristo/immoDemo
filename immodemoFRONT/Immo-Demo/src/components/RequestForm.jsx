@@ -90,6 +90,9 @@ const handleSubmit = async (e) => {
                             setFaxNumber = {setFaxNumber}
                             setMobileNumber = {setMobileNumber}
                             setEmail = {setEmail}
+                            contactViaFax = {contactViaFax}
+                            contactViaPhone = {contactViaPhone}
+                            contactViaMobile = {contactViaMobile}
                         />
                         <PreferredContact
                             setContactViaEmail = {setContactViaEmail}
