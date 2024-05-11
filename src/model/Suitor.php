@@ -4,8 +4,10 @@ namespace ImmoDemo\Model;
 
 use ImmoDemo\Enums\PreferredContact;
 use ImmoDemo\Enums\Request;
+use ImmoDemo\Model\PropertyObject;
 
 class Suitor {
+    private PropertyObject $propertyObject;
     private string $id;
     private string $title;
     private string $firstName;
@@ -23,6 +25,7 @@ class Suitor {
     private array $suitorRequests = [];
 
     public function __construct(
+        PropertyObject $propertyObject,
         string $title,
         string $firstName,
         string $lastName,
@@ -37,6 +40,7 @@ class Suitor {
         string $email,
 
     ) {
+        $this->propertyObject = $propertyObject;
         $this->id = uniqid();
         $this->title = $title;
         $this->firstName = $firstName;
@@ -63,6 +67,10 @@ class Suitor {
         if (!in_array($request, $this->suitorRequests)) {
             $this->suitorRequests[] = $request;
         }
+    }
+
+    public function getPropertyObject(): PropertyObject {
+        return $this->propertyObject;
     }
 
     public function getId()
