@@ -23,9 +23,9 @@ export default function SuitorData({
             <>
                 <div className="selectContainer">
                     <select name="anrede" id="title" onChange={(e) => setTitle(e.target.value)}>
+                        <option value="keine Angabe">Keine Angabe</option>
                         <option value="Herr">Herr</option>
                         <option value="Frau">Frau</option>
-                        <option value="keine Angabe">Keine Angabe</option>
                     </select>
                 </div>
                 <div className="nameContainer">

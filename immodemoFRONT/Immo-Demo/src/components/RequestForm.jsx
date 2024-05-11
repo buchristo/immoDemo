@@ -4,7 +4,7 @@ import PreferredContact from "./PreferredContact";
 import SuitorRequest from "./SuitorRequest";
 
 export default function RequestForm(){
-const [title, setTitle] = useState("");
+const [title, setTitle] = useState("keine Angabe");
 const [firstName, setFirstName] = useState("");
 const [lastName, setLastName] = useState("");
 const [company, setCompany] = useState("");
