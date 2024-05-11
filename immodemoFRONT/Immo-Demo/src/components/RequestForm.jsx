@@ -25,7 +25,7 @@ const [contactViaLetter, setContactViaLetter] = useState(false);
 
 const [requestViewing, setRequestViewing] = useState(false);
 const [requestCallback, setRequestCallback] = useState(false);
-const [requestDetails, setRequestDetails] = useState(false);
+const [requestDetails, setRequestDetails] = useState(true);
 
 const handleSubmit = async (e) => {
     e.preventDefault();
@@ -105,6 +105,7 @@ const handleSubmit = async (e) => {
                             setRequestViewing = {setRequestViewing}
                             setRequestCallback = {setRequestCallback}
                             setRequestDetails = {setRequestDetails}
+                            requestDetails = {requestDetails}
                         />
                         <div className="buttonContainer">
                             <button>Submit</button>
