@@ -4,3 +4,40 @@
   padding: 2rem;
   text-align: center;
 }
+
+.input-hidden {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+  transform: scale(0);
+  margin: 0;
+  padding: 1;
+  transition: all 0.3s ease;
+}
+
+.detailCheck, .viewingCheck, .callbackCheck, .emailCheck, .phoneCheck, .mobileCheck, .faxCheck, .letterCheck {
+  margin-bottom: 10px;
+}
+
+.nameContainer, .addressContainer, .zipContainer, .companyContainer{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.contactDataContainer1 input, .contactDataContainer2 input {
+  flex: 1 0 48%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.selectContainer, .nameContainer, .addressContainer, .zipContainer, .contactDataContainer1, .contactDataContainer2 {
+  width: 100%;
+}
+
+.nameContainer input, .addressContainer input, .zipContainer input, .contactDataContainer1 input, .contactDataContainer2 input {
+  flex: 1;
+  margin-right: 10px;
+}
