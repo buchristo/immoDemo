@@ -12,7 +12,10 @@ export default function SuitorData({
     setPhoneNumber,
     setFaxNumber,
     setMobileNumber,
-    setEmail
+    setEmail,
+    contactViaFax,
+    contactViaPhone,
+    contactViaMobile
 
 }){
 
@@ -35,16 +38,16 @@ export default function SuitorData({
                     <input type="text" id="streetNumber" placeholder="Nr.*" required onChange={(e) => setStreetNumber(e.target.value)}/>
                 </div>
                 <div className="zipContainer">
-                    <input type="text" id="zipCode" placeholder="Postleitzahl*" required onChange={(e) => setZipCode(e.target.value)}/>
+                    <input type="number" id="zipCode" placeholder="Postleitzahl*" required onChange={(e) => setZipCode(e.target.value)}/>
                     <input type="text" id="city" placeholder="Ort*" required onChange={(e) => setCity(e.target.value)}/>
                 </div>
                 <div className="contactDataContainer1">
-                    <input type="text" id="phoneNumber" placeholder="Tel" onChange={(e) => setPhoneNumber(e.target.value)}/>
-                    <input type="text" id="faxNumber" placeholder="Fax" onChange={(e) => setFaxNumber(e.target.value)}/>
+                    <input type="email" id="email" placeholder="Email*" required onChange={(e) => setEmail(e.target.value)}/>
+                    {contactViaFax && <input type="text" id="faxNumber" placeholder="Fax" onChange={(e) => setFaxNumber(e.target.value)}/>}
                 </div>
                 <div className="contactDataContainer2">
-                    <input type="text" id="mobileNumber" placeholder="Mobil" onChange={(e) => setMobileNumber(e.target.value)}/>
-                    <input type="text" id="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
+                    {contactViaPhone && <input type="text" id="phoneNumber" placeholder="Tel" onChange={(e) => setPhoneNumber(e.target.value)}/>}
+                    {contactViaMobile && <input type="text" id="mobileNumber" placeholder="Mobil" onChange={(e) => setMobileNumber(e.target.value)}/>}
                 </div>
             </>
         )
