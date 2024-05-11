@@ -16,19 +16,19 @@ class XmlBuilder {
         $objekt->addChild('bezeichnung', $suitor->getPropertyObject()->getName());
 
         $interessent = $xml->addChild('Interessent');
-        $interessent->addChild('id', $suitor->getId());
-        $interessent->addChild('anrede', htmlspecialchars($suitor->getTitle()));
-        $interessent->addChild('vorname', htmlspecialchars($suitor->getFirstName()));
-        $interessent->addChild('nachname', htmlspecialchars($suitor->getLastName()));
-        $interessent->addChild('firma', htmlspecialchars($suitor->getCompany()));
-        $interessent->addChild('strasse', htmlspecialchars($suitor->getStreet()));
-        $interessent->addChild('postfach', htmlspecialchars($suitor->getStreetNumber()));
-        $interessent->addChild('plz', htmlspecialchars($suitor->getZipCode()));
-        $interessent->addChild('ort', htmlspecialchars($suitor->getCity()));
-        $interessent->addChild('tel', htmlspecialchars($suitor->getPhoneNumber()));
-        $interessent->addChild('fax', htmlspecialchars($suitor->getFaxNumber()));
-        $interessent->addChild('mobil', htmlspecialchars($suitor->getMobileNumber()));
-        $interessent->addChild('email', htmlspecialchars($suitor->getEmail()));
+        self::addChildIfNotEmpty($interessent, 'id', $suitor->getId());
+        self::addChildIfNotEmpty($interessent, 'anrede', $suitor->getTitle());
+        self::addChildIfNotEmpty($interessent, 'vorname', $suitor->getFirstName());
+        self::addChildIfNotEmpty($interessent, 'nachname', $suitor->getLastName());
+        self::addChildIfNotEmpty($interessent, 'firma', $suitor->getCompany());
+        self::addChildIfNotEmpty($interessent, 'strasse', $suitor->getStreet());
+        self::addChildIfNotEmpty($interessent, 'postfach', $suitor->getStreetNumber());
+        self::addChildIfNotEmpty($interessent, 'plz', $suitor->getZipCode());
+        self::addChildIfNotEmpty($interessent, 'ort', $suitor->getCity());
+        self::addChildIfNotEmpty($interessent, 'tel', $suitor->getPhoneNumber());
+        self::addChildIfNotEmpty($interessent, 'fax', $suitor->getFaxNumber());
+        self::addChildIfNotEmpty($interessent, 'mobil', $suitor->getMobileNumber());
+        self::addChildIfNotEmpty($interessent, 'email', $suitor->getEmail());
 
         $bevorzugt = $interessent->addChild('Bevorzugt');
         foreach ($suitor->getContactPreferences() as $preference) {
@@ -55,5 +55,11 @@ class XmlBuilder {
         */
 
         return $dom->saveXML();
+    }
+
+    private static function addChildIfNotEmpty($parent, $childName, $value) {
+        if (!empty($value)) {
+            $parent->addChild($childName, htmlspecialchars($value));
+        }
     }
 }
