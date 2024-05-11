@@ -52,6 +52,7 @@ const resetForm = () => {
     setRequestViewing(false);
     setRequestCallback(false);
     setRequestDetails(true);
+    setMessage("")
     setIsPosted(false);
 };
 
@@ -92,6 +93,7 @@ const handleSubmit = async (e) => {
 
         const responseData = await response.json();
         console.log("Server Response", responseData);
+        setIsPosted(true);
     } catch (error) {
         console.error("ERROR:", error);
         setMessage("Fehler beim Senden der Anfrage.");
