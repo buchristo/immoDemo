@@ -15,7 +15,7 @@ export default function SuitorRequest({
                 </div>
                 <div className="callbackCheck">
                     <input type="checkbox" id="callbackCheckbox" onChange={(e) => setRequestCallback(e.target.checked)}/>
-                    <label htmlFor="callbackCheckbox" >Rückruf</label>
+                    <label htmlFor="callbackCheckbox" >Kontakt</label>
                 </div>
                 <div className="detailCheck">
                     <input type="checkbox" id="detailCheckbox" onChange={(e) => setRequestDetails(e.target.checked)}/>
