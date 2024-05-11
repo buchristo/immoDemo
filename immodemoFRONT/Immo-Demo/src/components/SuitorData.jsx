@@ -32,7 +32,9 @@ export default function SuitorData({
                     <input type="text" id="firstName" placeholder="Vorname*" required onChange={(e) => setFirstName(e.target.value)}/>
                     <input type="text" id="lastName" placeholder="Nachname*" required onChange={(e) => setLastName(e.target.value)}/>
                 </div>
-                <input type="text" id="company" placeholder="Firma" onChange={(e) => setCompany(e.target.value)}/>
+                <div className="companyContainer">
+                    <input type="text" id="company" placeholder="Firma" onChange={(e) => setCompany(e.target.value)}/>
+                </div>
                 <div className="addressContainer">
                     <input type="text" id="street" placeholder="Straße*" required onChange={(e) => setStreet(e.target.value)}/>
                     <input type="text" id="streetNumber" placeholder="Nr.*" required onChange={(e) => setStreetNumber(e.target.value)}/>
@@ -43,11 +45,11 @@ export default function SuitorData({
                 </div>
                 <div className="contactDataContainer1">
                     <input type="email" id="email" placeholder="Email*" required onChange={(e) => setEmail(e.target.value)}/>
-                    {contactViaFax && <input type="text" id="faxNumber" placeholder="Fax" onChange={(e) => setFaxNumber(e.target.value)}/>}
+                    <input type="text" id="faxNumber" placeholder="Fax" className={!contactViaFax ? "input-hidden" : ""} onChange={(e) => setFaxNumber(e.target.value)}/>
                 </div>
                 <div className="contactDataContainer2">
-                    {contactViaPhone && <input type="text" id="phoneNumber" placeholder="Tel" onChange={(e) => setPhoneNumber(e.target.value)}/>}
-                    {contactViaMobile && <input type="text" id="mobileNumber" placeholder="Mobil" onChange={(e) => setMobileNumber(e.target.value)}/>}
+                    <input type="text" id="phoneNumber" placeholder="Tel" className={!contactViaPhone ? "input-hidden" : ""} onChange={(e) => setPhoneNumber(e.target.value)}/>
+                    <input type="text" id="mobileNumber" placeholder="Mobil" className={!contactViaMobile ? "input-hidden" : ""} onChange={(e) => setMobileNumber(e.target.value)}/>
                 </div>
             </>
         )
