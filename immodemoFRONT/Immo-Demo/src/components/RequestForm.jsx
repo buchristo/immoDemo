@@ -73,7 +73,7 @@ const handleSubmit = async (e) => {
         <>
             <div>
                 <div className="Header">
-                    <h1>Anfrage</h1>
+                    <h2>Anfrage</h2>
                 </div>
                 <div className="formContainer">
                     <form onSubmit={handleSubmit}>
@@ -108,7 +108,7 @@ const handleSubmit = async (e) => {
                             requestDetails = {requestDetails}
                         />
                         <div className="buttonContainer">
-                            <button>Submit</button>
+                            <button>Anfragen</button>
                         </div>
                     </form>
                 </div>
