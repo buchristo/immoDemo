@@ -2,6 +2,7 @@ import { useState } from "react"
 import SuitorData from "./SuitorData";
 import PreferredContact from "./PreferredContact";
 import SuitorRequest from "./SuitorRequest";
+import ThankYou from "./ThankYou";
 
 export default function RequestForm(){
 const [title, setTitle] = useState("Herr");
@@ -26,6 +27,33 @@ const [contactViaLetter, setContactViaLetter] = useState(false);
 const [requestViewing, setRequestViewing] = useState(false);
 const [requestCallback, setRequestCallback] = useState(false);
 const [requestDetails, setRequestDetails] = useState(true);
+
+const [isPosted, setIsPosted] = useState(false);
+const [message, setMessage] = useState("");
+
+const resetForm = () => {
+    setTitle("Herr");
+    setFirstName("");
+    setLastName("");
+    setCompany("");
+    setStreet("");
+    setStreetNumber("");
+    setZipCode("");
+    setCity("");
+    setPhoneNumber("");
+    setFaxNumber("");
+    setMobileNumber("");
+    setEmail("");
+    setContactViaEmail(false);
+    setContactViaPhone(false);
+    setContactViaMobile(false);
+    setContactViaFax(false);
+    setContactViaLetter(false);
+    setRequestViewing(false);
+    setRequestCallback(false);
+    setRequestDetails(true);
+    setIsPosted(false);
+};
 
 const handleSubmit = async (e) => {
     e.preventDefault();
@@ -65,13 +93,17 @@ const handleSubmit = async (e) => {
         const responseData = await response.json();
         console.log("Server Response", responseData);
     } catch (error) {
-        console.error("ERROR:", error)
+        console.error("ERROR:", error);
+        setMessage("Fehler beim Senden der Anfrage.");
     }
 };
 
     return (
         <>
-            <div>
+            {isPosted ? (
+                <ThankYou setIsPosted={resetForm} />
+            ) : (
+                <div>
                 <div className="Header">
                     <h2>Anfrage</h2>
                 </div>
@@ -113,7 +145,8 @@ const handleSubmit = async (e) => {
                         </div>
                     </form>
                 </div>
-            </div>
+                {message && <p className="responseMessage">{message}</p>}
+            </div>)}
         </>
     )
 }
