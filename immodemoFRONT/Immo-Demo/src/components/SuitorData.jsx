@@ -40,7 +40,7 @@ export default function SuitorData({
                     <input type="text" id="streetNumber" placeholder="Nr.*" required onChange={(e) => setStreetNumber(e.target.value)}/>
                 </div>
                 <div className="zipContainer">
-                    <input type="number" id="zipCode" placeholder="Postleitzahl*" required onChange={(e) => setZipCode(e.target.value)}/>
+                    <input type="text" id="zipCode" placeholder="Postleitzahl*" required onChange={(e) => setZipCode(e.target.value)}/>
                     <input type="text" id="city" placeholder="Ort*" required onChange={(e) => setCity(e.target.value)}/>
                 </div>
                 <div className="contactDataContainer1">
