@@ -16,11 +16,15 @@
   transition: all 0.3s ease;
 }
 
+.Header {
+  text-align: left;
+}
+
 .detailCheck, .viewingCheck, .callbackCheck, .emailCheck, .phoneCheck, .mobileCheck, .faxCheck, .letterCheck {
   margin-bottom: 10px;
 }
 
-.nameContainer, .addressContainer, .zipContainer, .companyContainer{
+.nameContainer, .addressContainer, .zipContainer, .companyContainer, .buttonContainer, .selectContainer {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -33,11 +37,53 @@
   transition: all 0.3s ease;
 }
 
-.selectContainer, .nameContainer, .addressContainer, .zipContainer, .contactDataContainer1, .contactDataContainer2 {
+.nameContainer, .addressContainer, .zipContainer, .contactDataContainer1, .contactDataContainer2 {
   width: 100%;
 }
 
 .nameContainer input, .addressContainer input, .zipContainer input, .contactDataContainer1 input, .contactDataContainer2 input {
   flex: 1;
   margin-right: 10px;
+}
+
+.contactContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contactContainer input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 5%;
+}
+
+.contactContainer > div {
+  display: flex;
+  align-items: center;
+}
+
+.contactContainer label {
+  margin-left: 5px;
+}
+
+.requestContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.requestContainer input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 5%;
+}
+
+.requestContainer > div {
+  display: flex;
+  align-items: center;
+}
+
+.requestContainer label {
+  margin-left: 5px;
 }
