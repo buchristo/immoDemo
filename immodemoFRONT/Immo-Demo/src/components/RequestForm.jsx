@@ -4,7 +4,7 @@ import PreferredContact from "./PreferredContact";
 import SuitorRequest from "./SuitorRequest";
 
 export default function RequestForm(){
-const [title, setTitle] = useState("keine Angabe");
+const [title, setTitle] = useState("Herr");
 const [firstName, setFirstName] = useState("");
 const [lastName, setLastName] = useState("");
 const [company, setCompany] = useState("");
@@ -93,6 +93,7 @@ const handleSubmit = async (e) => {
                             contactViaFax = {contactViaFax}
                             contactViaPhone = {contactViaPhone}
                             contactViaMobile = {contactViaMobile}
+                            title = {title}
                         />
                         <PreferredContact
                             setContactViaEmail = {setContactViaEmail}
