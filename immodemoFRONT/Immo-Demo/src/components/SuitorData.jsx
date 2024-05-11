@@ -45,11 +45,11 @@ export default function SuitorData({
                 </div>
                 <div className="contactDataContainer1">
                     <input type="email" id="email" placeholder="Email*" required onChange={(e) => setEmail(e.target.value)}/>
-                    <input type="text" id="faxNumber" placeholder="Fax" className={!contactViaFax ? "input-hidden" : ""} onChange={(e) => setFaxNumber(e.target.value)}/>
+                    <input type="text" id="faxNumber" placeholder="Fax" className={!contactViaFax ? "input-hidden" : ""} required={contactViaFax} onChange={(e) => setFaxNumber(e.target.value)}/>
                 </div>
                 <div className="contactDataContainer2">
-                    <input type="text" id="phoneNumber" placeholder="Tel" className={!contactViaPhone ? "input-hidden" : ""} onChange={(e) => setPhoneNumber(e.target.value)}/>
-                    <input type="text" id="mobileNumber" placeholder="Mobil" className={!contactViaMobile ? "input-hidden" : ""} onChange={(e) => setMobileNumber(e.target.value)}/>
+                    <input type="text" id="phoneNumber" placeholder="Tel" className={!contactViaPhone ? "input-hidden" : ""} required={contactViaPhone} onChange={(e) => setPhoneNumber(e.target.value)}/>
+                    <input type="text" id="mobileNumber" placeholder="Mobil" className={!contactViaMobile ? "input-hidden" : ""} required={contactViaMobile} onChange={(e) => setMobileNumber(e.target.value)}/>
                 </div>
             </>
         )
