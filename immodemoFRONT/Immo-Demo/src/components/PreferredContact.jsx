@@ -10,6 +10,7 @@ export default function PreferredContact({
         return (
             <>
             <div className="contactContainer">
+                <h3>Wie können wir Sie am besten erreichen?</h3>
                 <div className="emailCheck">
                     <input type="checkbox" id="emailCheckbox" onChange={(e) => setContactViaEmail(e.target.checked)}/>
                     <label htmlFor="emailCheckbox" >Email</label>
