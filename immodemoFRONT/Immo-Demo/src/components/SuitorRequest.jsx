@@ -9,6 +9,7 @@ export default function SuitorRequest({
 
         return (
             <>
+            <h3>Ihr Aktivitätenwunsch zum Objekt</h3>
             <div className="requestContainer">
                 <div className="detailCheck">
                     <input type="checkbox" id="detailCheckbox" checked={requestDetails} onChange={(e) => setRequestDetails(e.target.checked)}/>
