@@ -5,13 +5,15 @@ require_once __DIR__ . '../../../vendor/autoload.php';
 use ImmoDemo\Builder\SuitorBuilder;
 use ImmoDemo\Builder\XmlBuilder;
 use ImmoDemo\Mailer\EmailSender;
+use ImmoDemo\Model\PropertyObject;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $postData = json_decode(file_get_contents("php://input"), true);
 
     if ($postData) {
 
-        $suitor = SuitorBuilder::build($postData);
+        $property = new PropertyObject('456', 'BeispielObjekt');
+        $suitor = SuitorBuilder::build($postData, $property);
         $xmlDocument = XmlBuilder::generateXml($suitor);
 
         $requestId = $suitor->getId();

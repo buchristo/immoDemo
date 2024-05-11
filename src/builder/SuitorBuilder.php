@@ -5,10 +5,12 @@ namespace ImmoDemo\Builder;
 use ImmoDemo\Model\Suitor;
 use ImmoDemo\Enums\PreferredContact;
 use ImmoDemo\Enums\Request;
+use ImmoDemo\Model\PropertyObject;
 
 class SuitorBuilder {
-    public static function build(array $postData): Suitor {
+    public static function build(array $postData, PropertyObject $propertyObject): Suitor {
         $suitor = new Suitor(
+            $propertyObject,
             $postData['title'],
             $postData['firstName'],
             $postData['lastName'],
